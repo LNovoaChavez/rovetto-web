@@ -8,7 +8,7 @@ export default function ProjectsPage() {
       {/* Hero */}
       <section className="relative h-[420px] overflow-hidden">
         <Image
-          src="/images/projects/projects-hero.jpg"
+          src="https://res.cloudinary.com/g6rgllhp/image/upload/v1788881982/WhatsApp_Image_2026-08-31_at_09.10.34.jpg"
           alt="Proyectos destacados"
           fill
           priority

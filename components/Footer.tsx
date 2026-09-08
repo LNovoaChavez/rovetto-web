@@ -45,7 +45,7 @@ const pageLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#f5f5f3] text-[#202020]">
+    <footer className="bg-[#f5f5f3] text-[#202020] mt-30">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
         
         <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr]">
