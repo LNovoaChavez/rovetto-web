@@ -13,7 +13,7 @@ import {
   FaChevronRight,
 } from "react-icons/fa";
 
-import type { Project } from "@/app/utils/proyectos";
+import type { Project } from "@/utils/proyectos";
 
 interface ProjectCardProps {
   project: Project;
