@@ -1,6 +1,6 @@
 import Image from "next/image";
 import ProjectCard from "@/components/ProjectCard";
-import { projects } from "@/app/utils/proyectos";
+import { projects } from "@/utils/proyectos";
 
 export default function ProjectsPage() {
   return (
