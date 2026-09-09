@@ -16,7 +16,7 @@ export default function Navbar() {
   return (
     <>
       {/* ================= DESKTOP NAVBAR ================= */}
-      <header className="fixed top-0 left-0 z-50 hidden w-full lg:block">
+      <header className="sticky top-0 z-50 hidden w-full lg:block mb-5">
         <nav className="mx-auto mt-4 flex max-w-7xl items-center justify-between rounded-full bg-white/95 px-6 py-3 shadow-sm backdrop-blur-md">
           {/* Logo / Nombre */}
           <Link
