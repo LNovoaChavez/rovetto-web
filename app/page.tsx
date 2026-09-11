@@ -4,12 +4,14 @@ import ComunidadCards from "@/components/ComunidadCards";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import LegislativeWork from "@/components/TrabajoLegislativo";
+import Values from "@/components/Values";
 
 export default function Home() {
   return (
     <div>
       <Hero />
       <AboutMe />
+      <Values />
       <LegislativeWork />
       <ComunidadCards />
       <ClaimCTA />
