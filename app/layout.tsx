@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Navbar from "@/components/NavBar";
 import "./globals.css";
+import Footer from "@/components/Footer";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main className="flex-1">
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );

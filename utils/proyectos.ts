@@ -51,8 +51,8 @@ export const projects: Project[] = [
     description:
       "Presenté este proyecto, “Educación Emocional”, para prevenir desde la raíz problemas graves como el bullying, el consumo y el suicidio adolescente en Córdoba. El Estado no debe actuar tarde: la clave es brindar herramientas formativas antes de que el daño suceda. Por eso, propongo incorporar la educación emocional obligatoria y transversal en todas las escuelas municipales. Capacitando a docentes y familias formaremos personas empáticas, seguras y listas para construir un proyecto sano de vida. ",
     images: [
-      "https://res.cloudinary.com/g6rgllhp/image/upload/v1789087368/IMG_1186.heic",
-      "https://res.cloudinary.com/g6rgllhp/image/upload/v1789087367/IMG_1173.heic",
+      "https://res.cloudinary.com/g6rgllhp/image/upload/f_jpg,q_auto/v1789087368/IMG_1186.heic",
+      "https://res.cloudinary.com/g6rgllhp/image/upload/f_jpg,q_auto/v1789087367/IMG_1173.heic",
     ],
     pdf: "/pdfs/RÉGIMEN DE ALFABETIZACIÓN EMOCIONAL EN LAS ESCUELAS FINAL.pdf",
   },

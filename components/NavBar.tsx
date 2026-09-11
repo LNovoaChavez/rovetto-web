@@ -171,6 +171,14 @@ export default function Navbar() {
             </Link>
 
             <Link
+              href="/#valores"
+              onClick={closeMenu}
+              className="border-b border-gray-100 py-4 text-base font-medium text-gray-800"
+            >
+              Valores
+            </Link>
+
+            <Link
               href="/#trabajo-legislativo"
               onClick={closeMenu}
               className="border-b border-gray-100 py-4 text-base font-medium text-gray-800"
@@ -226,13 +234,7 @@ export default function Navbar() {
               )}
             </div>
 
-            <Link
-              href="/#cxll"
-              onClick={closeMenu}
-              className="border-b border-gray-100 py-4 text-base font-medium text-gray-800"
-            >
-              CXLL
-            </Link>
+      
 
             <Link
               href="/#haz-tu-reclamo"
