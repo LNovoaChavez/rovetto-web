@@ -18,7 +18,6 @@ export default function Navbar() {
       {/* ================= DESKTOP NAVBAR ================= */}
       <header className="sticky top-0 z-50 hidden w-full lg:block mb-5">
         <nav className="mx-auto mt-4 flex max-w-7xl items-center justify-between rounded-full bg-white/95 px-6 py-3 shadow-sm backdrop-blur-md">
-          {/* Logo / Nombre */}
           <Link
             href="/"
             className="shrink-0 text-lg font-semibold tracking-tight text-primary"
@@ -26,17 +25,20 @@ export default function Navbar() {
             Jessica Rovetto
           </Link>
 
-          {/* Links */}
           <div className="flex items-center gap-7">
-            {/* Quién soy */}
             <Link
               href="/#quien-soy"
               className="text-sm font-medium text-gray-700 transition-colors hover:text-primary"
             >
               Quién soy
             </Link>
+            <Link
+              href="/#valores"
+              className="text-sm font-medium text-gray-700 transition-colors hover:text-primary"
+            >
+              Valores
+            </Link>
 
-            {/* Trabajo legislativo */}
             <Link
               href="/#trabajo-legislativo"
               className="text-sm font-medium text-gray-700 transition-colors hover:text-primary"
@@ -44,7 +46,6 @@ export default function Navbar() {
               Trabajo legislativo
             </Link>
 
-            {/* Comunidad */}
             <div
               className="relative"
               onMouseEnter={() => setIsCommunityOpen(true)}
@@ -63,7 +64,6 @@ export default function Navbar() {
                 />
               </Link>
 
-              {/* Dropdown */}
               <div
                 className={`absolute top-full left-1/2 w-44 -translate-x-1/2 pt-3 transition-all duration-200 ${
                   isCommunityOpen
@@ -72,7 +72,6 @@ export default function Navbar() {
                 }`}
               >
                 <div className="rounded-2xl border border-gray-100 bg-white p-2 shadow-lg">
-                  {/* Territorio */}
                   <Link
                     href="/comunidad#territorio"
                     className="block rounded-xl px-4 py-3 text-sm text-gray-700 transition-colors hover:bg-gray-50 hover:text-primary"
@@ -80,7 +79,6 @@ export default function Navbar() {
                     Territorio
                   </Link>
 
-                  {/* Juventud */}
                   <Link
                     href="/comunidad#juventud"
                     className="block rounded-xl px-4 py-3 text-sm text-gray-700 transition-colors hover:bg-gray-50 hover:text-primary"
@@ -91,15 +89,8 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* CXLL */}
-            <Link
-              href="/#cxll"
-              className="text-sm font-medium text-gray-700 transition-colors hover:text-primary"
-            >
-              CXLL
-            </Link>
+          
 
-            {/* Haz tu reclamo */}
             <Link
               href="/#haz-tu-reclamo"
               className="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-primary-dark"
@@ -122,7 +113,6 @@ export default function Navbar() {
             Jessica Rovetto
           </Link>
 
-          {/* Hamburguesa */}
           <button
             type="button"
             onClick={() => setIsOpen(true)}
@@ -140,7 +130,6 @@ export default function Navbar() {
           isOpen ? "pointer-events-auto" : "pointer-events-none"
         }`}
       >
-        {/* Overlay */}
         <div
           onClick={closeMenu}
           className={`absolute inset-0 bg-black/30 transition-opacity duration-300 ${
@@ -148,13 +137,11 @@ export default function Navbar() {
           }`}
         />
 
-        {/* Side panel */}
         <aside
           className={`absolute top-0 right-0 h-full w-[85%] max-w-sm bg-white px-6 py-6 shadow-2xl transition-transform duration-300 ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          {/* Header */}
           <div className="flex items-center justify-between">
             <Link
               href="/"
@@ -174,9 +161,7 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Links */}
           <div className="mt-12 flex flex-col">
-            {/* Quién soy */}
             <Link
               href="/#quien-soy"
               onClick={closeMenu}
@@ -185,7 +170,6 @@ export default function Navbar() {
               Quién soy
             </Link>
 
-            {/* Trabajo legislativo */}
             <Link
               href="/#trabajo-legislativo"
               onClick={closeMenu}
@@ -194,7 +178,6 @@ export default function Navbar() {
               Trabajo legislativo
             </Link>
 
-            {/* Comunidad */}
             <div className="border-b border-gray-100">
               <div className="flex items-center justify-between">
                 <Link
@@ -222,7 +205,6 @@ export default function Navbar() {
                 </button>
               </div>
 
-              {/* Opciones de Comunidad */}
               {isCommunityOpen && (
                 <div className="mb-3 flex flex-col rounded-xl bg-gray-50">
                   <Link
@@ -244,7 +226,6 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* CXLL */}
             <Link
               href="/#cxll"
               onClick={closeMenu}
@@ -253,7 +234,6 @@ export default function Navbar() {
               CXLL
             </Link>
 
-            {/* Haz tu reclamo */}
             <Link
               href="/#haz-tu-reclamo"
               onClick={closeMenu}

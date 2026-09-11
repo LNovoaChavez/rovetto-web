@@ -5,19 +5,19 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
   {
-    src: "/images/about/jessi-1.jpg",
+    src: "https://res.cloudinary.com/g6rgllhp/image/upload/v1788999002/IMG_0429_Original.jpg",
     alt: "Jessica Rovetto",
   },
   {
-    src: "/images/about/jessi-2.jpg",
+    src: "https://res.cloudinary.com/g6rgllhp/image/upload/v1788999000/CD-42_Original.jpg",
     alt: "Jessica Rovetto",
   },
   {
-    src: "/images/about/jessi-3.jpg",
+    src: "https://res.cloudinary.com/g6rgllhp/image/upload/v1788999000/2fd21761-010b-4fc8-818d-26e90c899631_Original.jpg",
     alt: "Jessica Rovetto",
   },
   {
-    src: "/images/about/jessi-4.jpg",
+    src: "https://res.cloudinary.com/g6rgllhp/image/upload/v1788999001/Copia_de_IMG_5895_Original.jpg",
     alt: "Jessica Rovetto",
   },
 ];
@@ -153,16 +153,11 @@ export default function AboutMe() {
           {/* ================= TEXTO ================= */}
           <div>
             <p className="text-base leading-8 text-gray-600 md:text-lg">
-              Soy Jessica Rovetto y trabajo para representar las necesidades
-              de los vecinos de Córdoba. Creo en una política cercana, donde
-              escuchar, recorrer los barrios y estar presente sean parte
-              fundamental del trabajo.
+              Soy cordobesa, mamá de dos niños y defensora de la libertad de cada vecino de nuestra ciudad. Comprometida de corazón con el futuro de nuestras familias, creo firmemente que una Córdoba liberal es posible.
             </p>
 
             <p className="mt-5 text-base leading-8 text-gray-600 md:text-lg">
-              Desde mi lugar, busco impulsar iniciativas que generen
-              soluciones concretas y acompañen a quienes todos los días hacen
-              crecer nuestra ciudad.
+              h
             </p>
 
             <div className="mt-8 h-1 w-16 rounded-full bg-[#FFD05A]" />

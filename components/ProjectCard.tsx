@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -35,14 +35,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   };
 
   const handlePreview = () => {
-    const pdfUrl = `${window.location.origin}${project.pdf}`;
+  const pdfUrl = `${window.location.origin}${project.pdf}`;
 
-    const googleViewerUrl = `https://docs.google.com/gview?embedded=false&url=${encodeURIComponent(
-      pdfUrl
-    )}`;
-
-    window.open(googleViewerUrl, "_blank");
-  };
+  window.open(pdfUrl, "_blank");
+};
 
   return (
     <Card
