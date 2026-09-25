@@ -13,6 +13,7 @@ import {
 } from "@/utils/claimValidations";
 
 import { FaPaperPlane } from "react-icons/fa";
+import ClaimsMap from "@/components/claims/ClaimsMap";
 
 const initialFormData: ClaimFormData = {
   nombre: "",
@@ -24,26 +25,22 @@ const initialFormData: ClaimFormData = {
 };
 
 export default function ClaimsForm() {
-  const [formData, setFormData] =
-    useState<ClaimFormData>(initialFormData);
+  const [formData, setFormData] = useState<ClaimFormData>(initialFormData);
 
-  const [errors, setErrors] =
-    useState<ClaimFormErrors>({});
+  const [addressSearchTrigger, setAddressSearchTrigger] = useState(0);
 
-  const [touched, setTouched] =
-    useState<Record<keyof ClaimFormData, boolean>>({
-      nombre: false,
-      apellido: false,
-      celular: false,
-      email: false,
-      direccion: false,
-      descripcion: false,
-    });
+  const [errors, setErrors] = useState<ClaimFormErrors>({});
 
-  const handleChange = (
-    field: keyof ClaimFormData,
-    value: string
-  ) => {
+  const [touched, setTouched] = useState<Record<keyof ClaimFormData, boolean>>({
+    nombre: false,
+    apellido: false,
+    celular: false,
+    email: false,
+    direccion: false,
+    descripcion: false,
+  });
+
+  const handleChange = (field: keyof ClaimFormData, value: string) => {
     const updatedForm = {
       ...formData,
       [field]: value,
@@ -95,7 +92,6 @@ export default function ClaimsForm() {
   return (
     <section className="bg-white px-6 py-20 lg:px-10">
       <div className="mx-auto max-w-7xl">
-
         {/* Encabezado */}
         <div className="mb-12 max-w-2xl">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.15em] text-primary">
@@ -107,70 +103,50 @@ export default function ClaimsForm() {
           </h1>
 
           <p className="mt-5 text-base leading-7 text-gray-600">
-            Queremos escucharte. Completá el formulario y contanos
-            cuál es el problema que querés acercarnos.
+            Queremos escucharte. Completá el formulario y contanos cuál es el
+            problema que querés acercarnos.
           </p>
         </div>
 
         {/* Formulario + Mapa */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
-
           {/* FORMULARIO */}
           <form
             onSubmit={handleSubmit}
             className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm md:p-8"
           >
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-
               {/* Nombre */}
               <TextField
                 label="Nombre"
                 value={formData.nombre}
-                onChange={(e) =>
-                  handleChange("nombre", e.target.value)
-                }
+                onChange={(e) => handleChange("nombre", e.target.value)}
                 onBlur={() => handleBlur("nombre")}
                 error={touched.nombre && Boolean(errors.nombre)}
-                helperText={
-                  touched.nombre ? errors.nombre : ""
-                }
+                helperText={touched.nombre ? errors.nombre : ""}
                 required
                 fullWidth
               />
 
-              {/* Apellido */}
               <TextField
                 label="Apellido"
                 value={formData.apellido}
-                onChange={(e) =>
-                  handleChange("apellido", e.target.value)
-                }
+                onChange={(e) => handleChange("apellido", e.target.value)}
                 onBlur={() => handleBlur("apellido")}
-                error={
-                  touched.apellido && Boolean(errors.apellido)
-                }
-                helperText={
-                  touched.apellido ? errors.apellido : ""
-                }
+                error={touched.apellido && Boolean(errors.apellido)}
+                helperText={touched.apellido ? errors.apellido : ""}
                 required
                 fullWidth
               />
 
-              {/* Celular */}
               <TextField
                 label="Número de celular"
                 type="tel"
                 value={formData.celular}
-                onChange={(e) =>
-                  handleChange("celular", e.target.value)
-                }
+                onChange={(e) => handleChange("celular", e.target.value)}
                 onBlur={() => handleBlur("celular")}
-                error={
-                  touched.celular && Boolean(errors.celular)
-                }
-                helperText={
-                  touched.celular ? errors.celular : ""
-                }
+                error={touched.celular && Boolean(errors.celular)}
+                helperText={touched.celular ? errors.celular : ""}
                 required
                 fullWidth
                 slotProps={{
@@ -180,70 +156,59 @@ export default function ClaimsForm() {
                 }}
               />
 
-              {/* Email */}
               <TextField
                 label="Correo electrónico"
                 type="email"
                 value={formData.email}
-                onChange={(e) =>
-                  handleChange("email", e.target.value)
-                }
+                onChange={(e) => handleChange("email", e.target.value)}
                 onBlur={() => handleBlur("email")}
-                error={
-                  touched.email && Boolean(errors.email)
-                }
-                helperText={
-                  touched.email ? errors.email : ""
-                }
+                error={touched.email && Boolean(errors.email)}
+                helperText={touched.email ? errors.email : ""}
                 required
                 fullWidth
               />
 
-              {/* Dirección */}
               <div className="md:col-span-2">
                 <TextField
                   label="Dirección"
                   value={formData.direccion}
-                  onChange={(e) =>
-                    handleChange("direccion", e.target.value)
-                  }
-                  onBlur={() => handleBlur("direccion")}
-                  error={
-                    touched.direccion &&
-                    Boolean(errors.direccion)
-                  }
+                  onChange={(e) => handleChange("direccion", e.target.value)}
+                  onBlur={() => {
+                    handleBlur("direccion");
+
+                    if (formData.direccion.trim()) {
+                      setAddressSearchTrigger((prev) => prev + 1);
+                    }
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      e.preventDefault();
+
+                      if (formData.direccion.trim()) {
+                        setAddressSearchTrigger((prev) => prev + 1);
+                      }
+                    }
+                  }}
+                  error={touched.direccion && Boolean(errors.direccion)}
                   helperText={
-                    touched.direccion ? errors.direccion : ""
+                    touched.direccion
+                      ? errors.direccion
+                      : "Escribí una dirección o seleccioná un punto en el mapa."
                   }
                   required
                   fullWidth
-                  placeholder="Ej. Calle Montevideo 45"
+                  placeholder="Ej. Av. Colón 1500, Córdoba"
                 />
               </div>
 
-              {/* Descripción */}
               <div className="md:col-span-2">
                 <TextField
                   label="Descripción del reclamo"
                   value={formData.descripcion}
-                  onChange={(e) =>
-                    handleChange(
-                      "descripcion",
-                      e.target.value
-                    )
-                  }
-                  onBlur={() =>
-                    handleBlur("descripcion")
-                  }
-                  error={
-                    touched.descripcion &&
-                    Boolean(errors.descripcion)
-                  }
-                  helperText={
-                    touched.descripcion
-                      ? errors.descripcion
-                      : ""
-                  }
+                  onChange={(e) => handleChange("descripcion", e.target.value)}
+                  onBlur={() => handleBlur("descripcion")}
+                  error={touched.descripcion && Boolean(errors.descripcion)}
+                  helperText={touched.descripcion ? errors.descripcion : ""}
                   required
                   fullWidth
                   multiline
@@ -253,7 +218,6 @@ export default function ClaimsForm() {
               </div>
             </div>
 
-            {/* Botón */}
             <div className="mt-7">
               <Button
                 type="submit"
@@ -287,7 +251,6 @@ export default function ClaimsForm() {
 
           {/* MAPA */}
           <div className="flex min-h-[450px] flex-col overflow-hidden rounded-2xl border border-gray-200 bg-gray-100 lg:min-h-full">
-
             <div className="flex items-center justify-between border-b border-gray-200 bg-white px-5 py-4">
               <div>
                 <h2 className="font-sans text-base font-semibold text-primary">
@@ -300,19 +263,18 @@ export default function ClaimsForm() {
               </div>
             </div>
 
-            {/* Placeholder del mapa */}
-            <div className="relative flex flex-1 items-center justify-center bg-gray-200">
-              <div className="text-center">
-                <p className="font-sans text-lg font-medium text-primary">
-                  Google Maps
-                </p>
-
-                <p className="mt-2 max-w-xs text-sm text-gray-500">
-                  Acá colocaremos el mapa interactivo.
-                </p>
-              </div>
+            <div className="relative flex-1">
+              <ClaimsMap
+                address={formData.direccion}
+                searchTrigger={addressSearchTrigger}
+                onAddressChange={(address) =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    direccion: address,
+                  }))
+                }
+              />
             </div>
-
           </div>
         </div>
       </div>
