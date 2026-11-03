@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -22,29 +23,6 @@ const images = [
   },
 ];
 
-const timelineItems = [
-  {
-    title: "Formación",
-    description: "Formación académica y profesional.",
-  },
-  {
-    title: "Primeros pasos",
-    description: "Sus primeros pasos en el ámbito público.",
-  },
-  {
-    title: "Trabajo comunitario",
-    description: "Experiencias y trabajo junto a la comunidad.",
-  },
-  {
-    title: "Trabajo legislativo",
-    description: "Su recorrido y experiencia en el ámbito legislativo.",
-  },
-  {
-    title: "Hoy",
-    description: "Su compromiso actual con los cordobeses.",
-  },
-];
-
 export default function AboutMe() {
   const [currentImage, setCurrentImage] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -61,7 +39,6 @@ export default function AboutMe() {
     );
   };
 
-  // ================= AUTOPLAY =================
   useEffect(() => {
     if (isPaused) return;
 
@@ -80,6 +57,7 @@ export default function AboutMe() {
       className="scroll-mt-32 bg-white px-6 py-20 md:py-24 lg:px-10 lg:py-28"
     >
       <div className="mx-auto max-w-7xl">
+
         {/* Encabezado */}
         <div className="mb-12 max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-[0.15em] text-[#074173]">
@@ -93,6 +71,7 @@ export default function AboutMe() {
 
         {/* Imagen + información */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center lg:gap-16">
+
           {/* ================= CARRUSEL ================= */}
           <div
             className="relative"
@@ -121,7 +100,6 @@ export default function AboutMe() {
                 <ChevronLeft size={21} />
               </button>
 
-              {/* Botón siguiente */}
               <button
                 type="button"
                 onClick={nextImage}
@@ -131,7 +109,6 @@ export default function AboutMe() {
                 <ChevronRight size={21} />
               </button>
 
-              {/* Indicadores */}
               <div className="absolute bottom-5 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full bg-black/25 px-3 py-2 backdrop-blur-sm">
                 {images.map((_, index) => (
                   <button
@@ -150,7 +127,6 @@ export default function AboutMe() {
             </div>
           </div>
 
-          {/* ================= TEXTO ================= */}
           <div>
             <p className="text-base leading-8 text-gray-600 md:text-lg">
               Soy cordobesa, mamá de dos niños y defensora de la libertad de cada vecino de nuestra ciudad. Comprometida de corazón con el futuro de nuestras familias, creo firmemente que una Córdoba liberal es posible.
@@ -162,74 +138,7 @@ export default function AboutMe() {
 
             <div className="mt-8 h-1 w-16 rounded-full bg-[#FFD05A]" />
           </div>
-        </div>
 
-        {/* ================= TIMELINE ================= */}
-        <div className="mt-20 md:mt-24">
-          <p className="text-center text-sm font-semibold uppercase tracking-[0.15em] text-[#074173]">
-            Mi recorrido
-          </p>
-
-          <div className="mt-12 w-full">
-            {/* ================= DESKTOP / TABLET ================= */}
-            <div className="relative mx-auto hidden w-full max-w-5xl justify-between md:flex">
-              {/* Línea horizontal */}
-              <div className="absolute left-0 right-0 top-[5.5rem] h-[2px] bg-gray-200" />
-
-              {timelineItems.map((item) => (
-                <div
-                  key={item.title}
-                  className="relative z-10 flex w-1/5 flex-col items-center px-2 text-center"
-                >
-                  {/* Título */}
-                  <div className="flex min-h-16 items-end justify-center">
-                    <span className="text-sm font-semibold text-gray-800 md:text-base">
-                      {item.title}
-                    </span>
-                  </div>
-
-                  {/* Punto */}
-                  <div className="my-6 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-white bg-[#074173] shadow-md ring-4 ring-[#FFD05A]/30">
-                    <div className="h-1.5 w-1.5 rounded-full bg-white" />
-                  </div>
-
-                  {/* Descripción */}
-                  <span className="max-w-[150px] text-xs leading-5 text-gray-500 md:text-sm">
-                    {item.description}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            {/* ================= MOBILE ================= */}
-            <div className="relative mx-auto flex max-w-md flex-col md:hidden">
-              {/* Línea vertical */}
-              <div className="absolute bottom-0 left-[10px] top-0 w-[2px] bg-gray-200" />
-
-              {timelineItems.map((item, index) => (
-                <div
-                  key={item.title}
-                  className="relative z-10 flex gap-6 pb-10 last:pb-0"
-                >
-                  {/* Punto */}
-                  <div className="relative z-10 mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-white bg-[#074173] shadow-md ring-4 ring-[#FFD05A]/30">
-                    <div className="h-1.5 w-1.5 rounded-full bg-white" />
-                  </div>
-
-                  {/* Contenido */}
-                  <div className="flex-1 text-left">
-                    <h3 className="text-base font-semibold text-gray-800">
-                      {item.title}
-                    </h3>
-
-                    <p className="mt-2 max-w-sm text-sm leading-6 text-gray-500">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>

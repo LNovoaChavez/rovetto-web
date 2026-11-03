@@ -58,14 +58,14 @@ export const projects: Project[] = [
   },
   {
     id: 5,
-    title: "Participación ciudadana",
+    title: "Emergencia Animal",
     description:
-      "Propuesta para promover una mayor participación de los vecinos en las decisiones de la ciudad.",
+      "Presenté el proyecto de Emergencia Sanitaria Animal porque, tras los ataques que costaron la vida de un niño y dejaron vecinos gravemente heridos, Córdoba no puede seguir mirando para otro lado. Propongo declarar la emergencia por dos años, prohibir la compraventa de animales de compañía, cerrar los criaderos rescatando a los animales y duplicar las multas para quienes no cumplan la ley.",
     images: [
       "/images/projects/proyecto-5-1.jpg",
       "/images/projects/proyecto-5-2.jpg",
     ],
-    pdf: "/pdfs/proyecto-5.pdf",
+    pdf: "/pdfs/Proyecto Emergencia Sanitaria Animal Marca de Agua.docx  (1).pdf",
   },
   
 ];

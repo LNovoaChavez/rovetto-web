@@ -1,7 +1,9 @@
-export default function Comunidad() {
+import Territorio from "@/components/Territorio";
+
+export default function ComunidadPage() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold text-primary mb-4">Comunidad y Participación</h1>
-    </div>
+    <main>
+      <Territorio />
+    </main>
   );
 }
