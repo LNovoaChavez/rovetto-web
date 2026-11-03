@@ -39,7 +39,6 @@ export default function AboutMe() {
     );
   };
 
-  // ================= AUTOPLAY =================
   useEffect(() => {
     if (isPaused) return;
 
@@ -101,7 +100,6 @@ export default function AboutMe() {
                 <ChevronLeft size={21} />
               </button>
 
-              {/* Botón siguiente */}
               <button
                 type="button"
                 onClick={nextImage}
@@ -111,7 +109,6 @@ export default function AboutMe() {
                 <ChevronRight size={21} />
               </button>
 
-              {/* Indicadores */}
               <div className="absolute bottom-5 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full bg-black/25 px-3 py-2 backdrop-blur-sm">
                 {images.map((_, index) => (
                   <button
@@ -130,7 +127,6 @@ export default function AboutMe() {
             </div>
           </div>
 
-          {/* ================= TEXTO ================= */}
           <div>
             <p className="text-base leading-8 text-gray-600 md:text-lg">
               Soy cordobesa, mamá de dos niños y defensora de la libertad de cada vecino de nuestra ciudad. Comprometida de corazón con el futuro de nuestras familias, creo firmemente que una Córdoba liberal es posible.
